@@ -25,7 +25,7 @@ def getFrequencyDictForText(sentence):
     return fullTermsDict
 
 def makeImage(text):
-    anne_mask = np.array(Image.open(path.join(d, "silueta_color2.png")))
+    anne_mask = np.array(Image.open(path.join(d, "<SILHOUETTE>.png"))) # color_silhouette.png
 
     wc = WordCloud(background_color="white", mask=anne_mask);
     # generate word cloud
@@ -38,7 +38,7 @@ def makeImage(text):
     wc.to_file("output.png")
 
 # Read the whole text.
-text = open(path.join(d, 'Anne (2).txt')).read()
+text = open(path.join(d, '<FILENAME>.txt')).read() # example_script.txt
 
 # Generate a word cloud image
 makeImage(getFrequencyDictForText(text))
